@@ -18,7 +18,7 @@
  * @j: The second integer to swap.
  *
  *Return:Always 0
- * /
+ */
 void swap_ints(int *i, int *j)
 {
 	int tmp;
