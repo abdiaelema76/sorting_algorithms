@@ -13,9 +13,20 @@
  * 
  * @size: Number of elements in the array
  *
- * Return: Always 0
- */
+ * swap_ints - Swap two integers in an array.
+ * @i: The first integer to swap.
+ * @j: The second integer to swap.
+ *
+ *Return:Always 0
+ * /
+void swap_ints(int *i, int *j)
+{
+	int tmp;
 
+	tmp = *i;
+	*i = *j;
+	*j = tmp;
+}
 void bubble_sort(int *array, size_t size)
 {
     if (array == NULL || size < 2)
@@ -37,7 +48,7 @@ void bubble_sort(int *array, size_t size)
                 array[j + 1] = temp;
                 swapped = 1;
 
-                print_array(array, size);  /*Prints the array after each swap*/
+                print_array(array, size);  /* Prints the array after each swap*/
             }
         }
 
