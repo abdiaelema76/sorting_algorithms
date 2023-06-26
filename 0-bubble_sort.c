@@ -48,7 +48,7 @@ void bubble_sort(int *array, size_t size)
                 array[j + 1] = temp;
                 swapped = 1;
 
-                print_array(array, size);  /* Prints the array after each swap*/
+                print_array(const int *array, size_t size)  /* Prints the array after each swap*/
             }
         }
 
