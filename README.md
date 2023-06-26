@@ -12,7 +12,7 @@ A  function that sorts an array of integers in ascending order using the Selecti
 ## 3. Quick sort
 A  function that sorts an array of integers in ascending order using the Quick sort algorithm
 
-##4. Shell sort - Knuth Sequence
+## 4. Shell sort - Knuth Sequence
 A function that sorts an array of integers in ascending order using the Shell sort algorithm, using the Knuth sequence
 
 ## 5. Cocktail shaker sort
