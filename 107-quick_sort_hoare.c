@@ -35,7 +35,7 @@ int hoare_partition(int *array, size_t size, int left, int right)
 	int pivot, up, down;
 
 	pivot = array[right];
-	for (up = left - 1, downn = right + 1; up < down;)
+	for (up = left - 1, dow`n = right + 1; up < down;)
 	{
 		do {
 			up++;
