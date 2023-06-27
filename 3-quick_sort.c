@@ -1,71 +1,65 @@
 #include "sort.h"
-int partition(int arr[], int low, int high, size_t size);
 
 /**
- * quick_sort - sorting algorithm
- * @array: data
- * @size: size data
- * Return: nothing.
-*/
+ * quick_sort - function entry point
+ * @array: array to be sorted
+ * @size: size of the array
+ */
+
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size <= 1)
-		return;
-	quick(array, 0, size - 1, size);
+	sort_fast(array, 0, size - 1, size);
 }
+
 /**
- * quick -The main function that implements Quicksort
- * Return: nothing
-*/
-void quick(int *arr, int low, int high, size_t size)
+ * sort_fast - implements sort fast
+ */
+
+void sort_fast(int *array, int first, int last, size_t size)
 {
-	int pi;
+	int i = 0;
 
-	if (low < high)
+	if (first < last)
 	{
-		pi = partition(arr, low, high, size);
+		i = split(array, first, last, size);
 
-		quick(arr, low, pi - 1, size);
-		quick(arr, pi + 1, high, size);
+		sort_fast(array, first, i - 1, size);
+		sort_fast(array, i + 1, last, size);
 	}
-
 }
 
 /**
- * partition -This function takes last element as pivot
- * Return: index
-*/
-int partition(int *arr, int low, int high, size_t size)
-{
-	int i = low - 1;
-	int j;
+ * split - takes last element as pivot and places it at its correct position in
+ * a sorted array, places all elements smaller to it to the left and greater
+ * Return: i
+ */
 
-	for (j = low; j < high; j++)
+int split(int *array, int first, int last, size_t size)
+{
+	int pivot = array[last], i = first - 1, j = first, temp = 0;
+
+	while (j <= last - 1)
 	{
-		if (arr[j] <= arr[high])
+		if (array[j] <= pivot)
 		{
 			i++;
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+
 			if (i != j)
-			{
-				swap(&arr[i], &arr[j]);
-				print_array(arr, size);
-			}
+				print_array(array, size);
 		}
+		j++;
 	}
-	if (i + 1 != high)
-	{
-		swap(&arr[i + 1], &arr[high]);
-		print_array(arr, size);
-	}
-	return (i + 1);
-}
-/**
- *swap - Exchange values
- * Return: nothing
-*/
-void swap(int *first, int *second)
-{
-	int sw = *first;
-	*first = *second;
-	*second = sw;
+	temp = 0;
+	i++;
+	temp = array[i];
+	array[i] = array[last];
+	array[last] = temp;
+
+	if (array[i] != array[last])
+		print_array(array, size);
+
+	return (i);
 }
