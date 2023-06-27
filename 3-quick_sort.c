@@ -3,8 +3,6 @@ int partition(int arr[], int low, int high, size_t size);
 
 /**
  * quick_sort - sorting algorithm
- * @array: data
- * @size: size data
  * Return: nothing.
 */
 void quick_sort(int *array, size_t size)
@@ -14,7 +12,7 @@ void quick_sort(int *array, size_t size)
 	quick(array, 0, size - 1, size);
 }
 /**
- * quick -The main function that implements Quicksort
+ * quick -The main function that implements QuickSort
  * Return: nothing
 */
 void quick(int *arr, int low, int high, size_t size)
@@ -32,7 +30,7 @@ void quick(int *arr, int low, int high, size_t size)
 }
 
 /**
- * partition -This function takes last element as pivot
+ * partition
  * Return: index
 */
 int partition(int *arr, int low, int high, size_t size)
