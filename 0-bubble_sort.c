@@ -24,6 +24,7 @@ void print_array(const int *array, size_t size);
 
 void bubble_sort(int *array, size_t size) 
 {
+    int array, n, c, d, swap;
     for (c = 0 ; c < n - 1; c++)
   {
     for (d = 0 ; d < n - c - 1; d++)
